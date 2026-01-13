@@ -2,3 +2,5 @@
 *data
 chromedriver-linux64*
 venv*
+*.log
+
