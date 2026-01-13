@@ -1,5 +1,6 @@
 #download chromedriver from https://googlechromelabs.github.io/chrome-for-testing/#stable
 #unzip chromedriver-linux64.zip
+#python3 -u web_scraping_mof_statistics.py > web_scraping.log 2>&1 &
 
 import random
 import sys
@@ -165,7 +166,7 @@ def get_filename_after_download(download_path, timeout=20):
     # List files before we start (to avoid old files)
     old_files = set(os.listdir(download_path))
 
-    time.sleep(5)
+    time.sleep(10)
     
     while ( time.time() - start_time ) < timeout:
         current_files = set(os.listdir(download_path))
@@ -198,13 +199,13 @@ def rename_the_file ( fName , year , month ):
         return None
     # ====== end of rename_the_file =====
 
-def get_csv_file( driver , wait , str_theYear , str_TheM ):
+def get_csv_file( section_str , driver , wait , str_theYear , str_TheM ):
 
     # Switch to the correct frame
     switch_to_frame ( driver , "qry1" )
 
     # --------- Click "出口主要國家/地區、主要貨品" ----------
-    click_the_item ( "出口主要國家/地區、主要貨品" , driver , wait )
+    click_the_item ( section_str , driver , wait )
 
     # ----------------------------------------------------------------------
     switch_to_frame ( driver , "qry2" )
@@ -265,15 +266,19 @@ if __name__ == "__main__" :
     wait = WebDriverWait(driver, 10)
 
     list_all_frame ( driver )
+    section = "出口主要國家/地區、主要貨品"
 
-    str_theYear = "114"
-    str_theM = "1"
-    get_csv_file(  driver , wait , str_theYear , str_theM )
-    cvsf = get_filename_after_download ( DOWNLOAD_DIR )
-    rename_the_file ( cvsf , str_theYear , str_theM )
+    for y in range ( 114 , 103 , -1 ) :
+        for m in range ( 1, 13 , 1 ) :
 
-    os.system("pkill -f soffice") # soffice 是 LibreOffice 的進程名稱
-    print("✅ shotdown LibreOffice")    
+            yearStr  = str( y )
+            monthStr = str( m )
+
+            get_csv_file( section , driver , wait , yearStr , monthStr )
+            cvsf = get_filename_after_download ( DOWNLOAD_DIR )
+            rename_the_file ( cvsf , yearStr , monthStr )
+            os.system("pkill -f soffice") # soffice 是 LibreOffice 的進程名稱
+            print("✅ shotdown LibreOffice")    
 
 
 
