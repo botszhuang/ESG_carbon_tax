@@ -3,4 +3,5 @@
 chromedriver-linux64*
 venv*
 *.log
+*.zip
 
