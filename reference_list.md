@@ -32,6 +32,17 @@ Cargo traffic volume is treated as a high-correlation proxy for export vitality;
 
    2.2 WTO Commitments (CTS): Information on bound tariffs and service commitments. https://ttd.wto.org/en/data/cts
 
+   2.3 U.S. DataWeb U.S. Trade & Tariff Data https://dataweb.usitc.gov/
+   The USITC DataWeb provides public access to the official U.S. import and export statistics of the U.S. Department of Commerce in a user-friendly web interface. Using the DataWeb querying tool, users can build custom queries and access these data in a spreadsheet or a web-based format.
+      - Tariff Database https://dataweb.usitc.gov/tariff/database
+      Search for individual tariff lines using HTS category numbers or product descriptions.
+      - Tariff Annual Data https://dataweb.usitc.gov/tariff/annual
+      Access annual tariff data from 1997 to present available in a downloadable zip file format.
+      - Tariff Programs https://dataweb.usitc.gov/tariff/programs
+      View listings of U.S. trade agreements and programs with reduced/no tariffs on eligible goods.
+   
+   2.4 Ranking of the top trading partners of the United States for trade goods in 2024, by import value  https://www.statista.com/statistics/186601/ranking-of-the-largest-trading-partners-for-us-imports/
+
 3. IMF (International Monetary Fund): For World Economic Outlook (WEO) reports and global GDP projections.
 
 4. OECD: For composite leading indicators (CLI) and structural economic analysis of developed markets.
