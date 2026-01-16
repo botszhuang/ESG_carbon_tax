@@ -43,6 +43,8 @@ Cargo traffic volume is treated as a high-correlation proxy for export vitality;
    
    2.4 Ranking of the top trading partners of the United States for trade goods in 2024, by import value  https://www.statista.com/statistics/186601/ranking-of-the-largest-trading-partners-for-us-imports/
 
+   2.5 worldbank/World Integrated Trade Solution https://wits.worldbank.org/CountryProfile/en/Country/USA/Year/LTST/TradeFlow/Import/Partner/by-country/Product/Total
+
 3. IMF (International Monetary Fund): For World Economic Outlook (WEO) reports and global GDP projections.
 
 4. OECD: For composite leading indicators (CLI) and structural economic analysis of developed markets.
